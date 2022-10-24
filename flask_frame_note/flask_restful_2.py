@@ -23,4 +23,4 @@ api.add_resource(Todo1, '/Todo1')
 api.add_resource(Todo2, '/Todo2')
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')

@@ -14,7 +14,7 @@ class TodoSimple(Resource):
         parser.add_argument('width', type=int, help='width!!!')  # 类似命令行解析argparse模块
         parser.add_argument('hight', type=int, help='hight!!!')
         args = parser.parse_args()
-        print(args)
+        print('args:', args)
         area = args.get('width') * args.get('hight')
         return area
 
