@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -10,10 +11,10 @@ def index():
         # Renders a template from the template folder with the given context.
         return render_template('example.html')
     if request.method == 'POST':
-        name = request.form.get('name_') # 从form表单获取name_属性
+        name = request.form.get('name_')  # 从form表单获取name_属性
         password = request.form.get('password_')  # 从form表单获取password_属性
         print(name, password)
-        return "this is post"
+        return jsonify({'name': name, 'password': password})
 
 
 if __name__ == '__main__':

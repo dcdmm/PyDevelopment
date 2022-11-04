@@ -1,26 +1,26 @@
-from flask import Flask, request
-from flask_restful import Resource, Api
+from flask import Flask
+from flask_restful import Resource, Api, reqparse
 
 app = Flask(__name__)
 api = Api(app)
+
 todos = {}
 
 
-class Todo1(Resource):
-    def get(self):
-        # Default to 200 OK
-        return {'task': 'apple'}
+class TodoSimple(Resource):
+    def post(self):
+        """POST请求时调用"""
+        parser = reqparse.RequestParser()
+        parser.add_argument('width', type=int, help='width!!!')  # 类似命令行解析argparse模块
+        parser.add_argument('hight', type=int, help='hight!!!')
+        args = parser.parse_args()
+        print('args:', args)
+        area = args.get('width') * args.get('hight')
+        return area
 
 
-class Todo2(Resource):
-    def get(self):
-        # Set the response code to 201
-        return {'task': 'babana'}, 201
+# curl http://127.0.0.1:5000/index -d 'width=3' -d 'hight=4' -X POST
+api.add_resource(TodoSimple, '/index')
 
-# curl http://127.0.0.1:5000/Todo1
-api.add_resource(Todo1, '/Todo1')
-# curl http://127.0.0.1:5000/Todo2
-api.add_resource(Todo2, '/Todo2')
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+if __name__ == '__main__':
+    app.run()

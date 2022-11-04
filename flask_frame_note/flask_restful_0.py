@@ -3,14 +3,25 @@ from flask_restful import Resource, Api
 
 app = Flask(__name__)
 api = Api(app)
+todos = {}
 
 
-class HelloWorld(Resource):
+class Todo1(Resource):
     def get(self):
-        return {'hello': 'world'}
+        # Default to 200 OK
+        return {'task': 'apple'}
 
-# curl http://127.0.0.1:5000/index
-api.add_resource(HelloWorld, '/index')
 
-if __name__ == '__main__':
+class Todo2(Resource):
+    def get(self):
+        # Set the response code to 201
+        return {'task': 'babana'}, 201
+
+
+# http://127.0.0.1:5000/Todo1
+api.add_resource(Todo1, '/Todo1')
+# http://127.0.0.1:5000/Todo2
+api.add_resource(Todo2, '/Todo2')
+
+if __name__ == "__main__":
     app.run()
