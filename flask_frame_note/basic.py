@@ -1,5 +1,4 @@
 from flask import Flask
-from flask import Response
 
 # 实例化
 app = Flask(__name__)
