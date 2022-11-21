@@ -1,49 +1,32 @@
-from flask import Flask, request
-from flask_restful import Resource, Api
-from flask import jsonify
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-api = Api(app)
-
-todos = {}
 
 
-class TodoSimple(Resource):
-    def get(self, todo_id):
-        """GET请求时调用"""
-        # http://127.0.0.1:5000/index
+@app.route('/get_data', methods=['GET', 'POST'])
+def example_get():
+    # curl http://127.0.0.1:5000/get_data?name=frank&gender=male
+    if request.method == 'GET':
+        print(request.args)  # 获取url中的参数
+        print(type(request.args))  # werkzeug.datastructures.ImmutableMultiDict
+        name = request.args.get('name')
+        gender = request.args.get('gender')
+        return jsonify({'name': name, 'gender': gender})
 
-        print("变量todo_id::", todo_id)
-        return jsonify(code=200, status=0, message='ok', value=todo_id)
-
-    def post(self, todo_id):
-        """POST请求时调用"""
-        # url命令发送JSON数据
-        # curl  -H "Content-Type: application/json" http://127.0.0.1:5000/todo1  -X POST -d '{"data":123}'
-
-        print("变量todo_id::", todo_id)
-        print(request.form,  # The form parameters
-              type(request.form))  # werkzeug.datastructures.ImmutableMultiDict
-        print(request.form.to_dict())  # Return the contents as regular dict.
-        print(request.json,  # The parsed JSON data if :attr:`mimetype` indicates JSON
-              type(request.json))  # dict
-        if request.json is None:
-            todos[todo_id] = request.form['data']
-            return {todo_id: todos[todo_id]}
+    if request.method == 'POST':
+        data_json = request.json
+        # curl -H "Content-Type: application/json" http://127.0.0.1:5000/get_data -d '{"data":123}' -X POST
+        if data_json is not None:
+            print(data_json)  # {'data': 123}
+            print(type(data_json))  # dict
+            return jsonify(data_json)  # {"data":123}
+        # curl http://127.0.0.1:5000/get_data -d 'data=123' -X POST
         else:
-            todos[todo_id] = request.json['data']
-            return {todo_id: todos[todo_id]}
+            print(request.form)  # ImmutableMultiDict([('data', '123')])
+            print(type(request.form))  # werkzeug.datastructures.ImmutableMultiDict
+            print(request.form.get('data'))  # 123
+            return jsonify(request.form)  # {"data":"123"}
 
-
-api.add_resource(TodoSimple, '/<string:todo_id>')  # todo_id表示变量
 
 if __name__ == '__main__':
     app.run()
-
-'''
-example:
-curl http://127.0.0.1:5000/todo1 -d 'data=apple' -X POST
-{
-    "todo1": "apple"
-}
-'''
