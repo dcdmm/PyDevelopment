@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 # Serialize objects to ASCII-encoded JSON. If this is disabled, the JSON returned from jsonify will contain Unicode characters.
-app.config['JSON_AS_ASCII'] = False  #
+app.config['JSON_AS_ASCII'] = False  # 通过设置app.config['JSON_AS_ASCII'] = False,使其正常显示中文
 
 
 @app.route('/index')
