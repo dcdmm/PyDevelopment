@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route('/get_data', methods=['GET', 'POST'])
 def example_get():
-    # test:curl "http://127.0.0.1:5000/get_data?name=frank&gender=male"
     if request.method == 'GET':
+        # test:curl "http://127.0.0.1:5000/get_data?name=frank&gender=male"
         print(request.args)  # 获取url中的参数
         print(type(request.args))  # werkzeug.datastructures.ImmutableMultiDict
         name = request.args.get('name')
@@ -14,14 +14,14 @@ def example_get():
         return jsonify({'name': name, 'gender': gender})
 
     if request.method == 'POST':
-        data_json = request.json
         # test:curl -H "Content-Type: application/json" http://127.0.0.1:5000/get_data -d '{"data":123}' -X POST
+        data_json = request.json
         if data_json is not None:
             print(data_json)  # {'data': 123}
             print(type(data_json))  # dict
             return jsonify(data_json)  # {"data":123}
-        # test:curl http://127.0.0.1:5000/get_data -d 'data=123' -X POST
         else:
+            # test:curl http://127.0.0.1:5000/get_data -d 'data=123' -X POST
             print(request.form)  # ImmutableMultiDict([('data', '123')])
             print(type(request.form))  # werkzeug.datastructures.ImmutableMultiDict
             print(request.form.get('data'))  # 123
