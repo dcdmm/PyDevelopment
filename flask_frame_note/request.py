@@ -7,7 +7,7 @@ app = Flask(__name__)
 def example_get():
     if request.method == 'GET':
         # test:curl "http://127.0.0.1:5000/get_data?name=frank&gender=male"
-        print(request.args)  # 获取url中的参数
+        print(request.args)  # 获取url中的参数(POST请求也可以获取)
         print(type(request.args))  # werkzeug.datastructures.ImmutableMultiDict
         name = request.args.get('name')
         gender = request.args.get('gender')
