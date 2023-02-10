@@ -13,6 +13,9 @@ def hello_world():
 # 只接受'GET'请求
 @app.route("/chao", methods=['GET'])
 def hello_python():
+    # 不设置debug=True ===> 浏览器中提示Internal Server Error,看不到错误的详细信息
+    # 设置debug=True ===> 浏览器中显示错误类型ZeroDivisionError,并给出错误的详细信息
+    a = 1 / 0
     return "<p>Hello, Python!</p>"
 
 
@@ -27,4 +30,4 @@ def hello_python():
 '''
 if __name__ == '__main__':
     # app.run(host='0.0.0.0') # 还可以通过`curl http://外网ip地址:5000/duan`访问
-    app.run(port=5001)  # test:`curl http://127.0.0.1:5001/duan`或`curl http://内网ip地址:5001/duan`
+    app.run(debug=True, port=5001)  # test:`curl http://127.0.0.1:5001/duan`或`curl http://内网ip地址:5001/duan`
