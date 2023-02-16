@@ -30,6 +30,8 @@ COPY . /my_code
 
 # The RUN instruction will execute any commands in a new layer on top of the current image and commit the results.
 # The resulting committed image will be used for the next step in the Dockerfile.
+RUN apt update
+RUN apt install -y vim
 RUN pip install -r requirements.txt
 
 # There can only be one CMD instruction in a Dockerfile.
