@@ -45,4 +45,9 @@ RUN pip install -r requirements.txt
 # This array form is the preferred format of CMD.
 # Any additional parameters must be individually expressed as strings in the array:
 # CMD ["/usr/bin/wc","--help"]
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# The CMD instruction has three forms:
+# CMD ["executable","param1","param2"] (exec form, this is the preferred form)
+# CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
+# CMD command param1 param2 (shell form)
 CMD ["python", "app.py"]
