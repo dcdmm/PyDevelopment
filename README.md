@@ -22,3 +22,9 @@
 |assertNotIn(a, b)    |a not in b|
 |assertIsInstance(a, b)    |isinstance(a, b)|
 |assertNotIsInstance(a, b)    |not isinstance(a, b)|
+
+### 操作Elasticsearch搜索和分析引擎
+
+### 操作mysql数据库_pymysql
+
+### 操作图数据库neo4j
