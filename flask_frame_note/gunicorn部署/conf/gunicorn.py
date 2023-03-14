@@ -51,6 +51,13 @@ errorlog = "log/errorlog.log"
 accesslog = "-"
 # --access-logfile
 
+# Set environment variables in the execution environment.
+# Default: []
+# Should be a list of strings in the key=value format.
+# For example on the command line: gunicorn -b 127.0.0.1:8000 --env FOO=1 test:app
+# Or in the configuration file: raw_env = ["FOO=1"]
+raw_env = []
+
 debug = True
 
 
