@@ -3,7 +3,11 @@ import requests
 url0 = 'https://httpbin.org/get?name=frank&gender=male'
 
 # Sends a GET request.
-response = requests.get(url0)
+response = requests.get(url0,
+                        # You can tell Requests to stop waiting for a response after a given number of seconds with the timeout parameter.
+                        # Nearly all production code should use this parameter in nearly all requests.
+                        # Failure to do so can cause your program to hang indefinitely
+                        timeout=5)
 
 # Final URL location of Response.
 print(response.url)
