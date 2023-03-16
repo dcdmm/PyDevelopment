@@ -17,6 +17,14 @@ Content-Type: application/json  # 序列化后的JSON字符串类型
 
 ###
 
+POST https://httpbin.org/post
+Content-Type: application/json
+
+# 从文件中读取body
+< test_data/tes0.json
+
+###
+
 POST http://127.0.0.1:5000/get_data
 Content-Type: application/json
 
