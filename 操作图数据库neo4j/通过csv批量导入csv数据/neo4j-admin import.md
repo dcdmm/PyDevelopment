@@ -1,6 +1,6 @@
 条件:
 
-* 停止neo4j
+* 停止neo4j服务(bin/neo4j stop);不包括docker部署
 * 只能生成新的数据库(若已经存在,则从data目录databases,transactions中删除该数据库),不能在已存在的数据库中插入数据
 
 优点:
