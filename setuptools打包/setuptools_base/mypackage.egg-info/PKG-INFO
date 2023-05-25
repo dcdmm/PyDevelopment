@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: mypackage
+Version: 0.0.1
+Summary: setuptools test
+Home-page: https://github.com/dcdmm/setuptools
+Author: dcdmm
+Author-email: dcdmm@gmail.com
+License: Apache 2.0 License
+Keywords: python,setuptools
+Requires-Python: >=3.6.0
