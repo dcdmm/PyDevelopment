@@ -2,9 +2,13 @@
 
 ### docker_demo
 
-### web开发Flask框架
+### flask_frame_note
 
-### 自动化测试unittest框架
+* web开发Flask框架
+
+### uniitest_frame_note
+
+* 自动化测试unittest框架
 
 #### 断言
 
@@ -22,6 +26,10 @@
 |assertNotIn(a, b)    |a not in b|
 |assertIsInstance(a, b)    |isinstance(a, b)|
 |assertNotIsInstance(a, b)    |not isinstance(a, b)|
+
+### setuptools_note
+
+* 创建和发布Python包工具
 
 ### 操作Elasticsearch搜索和分析引擎
 
