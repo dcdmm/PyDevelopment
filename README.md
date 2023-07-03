@@ -33,6 +33,6 @@
 
 ### 操作Elasticsearch搜索和分析引擎
 
-### 操作mysql数据库_pymysql
+### 操作mysql数据库
 
 ### 操作图数据库neo4j
