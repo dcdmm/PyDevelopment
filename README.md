@@ -31,8 +31,10 @@
 
 * 创建和发布Python包工具
 
-### 操作Elasticsearch搜索和分析引擎
-
 ### 操作mysql数据库
+
+### 操作分布式搜素哦和分析引擎Elasticsearch
+
+### 操作图数据库milvus
 
 ### 操作图数据库neo4j
