@@ -1,4 +1,4 @@
-### docker部署
+### 社区版docker单机部署
 
 ```shell
 docker pull neo4j:4.4.15-community

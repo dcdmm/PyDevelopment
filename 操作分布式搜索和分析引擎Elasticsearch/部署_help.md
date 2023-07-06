@@ -1,12 +1,43 @@
 ### docker单机部署
 
+1. pull
+
 ```shell
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.11.2 
 docker pull docker.elastic.co/kibana/kibana:7.11.2
+```
 
-docker network create nettest
+2. docker compose
 
-docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" --name es --network nettest docker.elastic.co/elasticsearch/elasticsearch:7.11.2 
+```yaml
+version: "3.8"
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+    volumes:
+      - data01:/usr/share/elasticsearch/data
+    networks:
+      - overlay
 
-docker run --link 1428f0fc63ce(即easticsearch容器id):elasticsearch -d -p 5601:5601 --name kibana --network nettest docker.elastic.co/kibana/kibana:7.11.2
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.11.2
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'  # kibana默认值
+    depends_on:
+      - elasticsearch
+    networks:
+      - overlay
+
+volumes:
+  data01:
+
+networks:
+  overlay:
 ```
