@@ -2,7 +2,7 @@
 
 version: "3.8"
 services:
-  mysql:
+  mysql:  # 容器名称自动生成为:docker_compose_base-mysql-1
     # Specify the image to start the container from. Can either be a repository/tag or a partial image ID.
     image: mysql:5.7
     # Override the default command.

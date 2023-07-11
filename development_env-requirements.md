@@ -1,4 +1,4 @@
-### development_env虚拟环境核心包安装
+### 核心包安装
 
 * Flask: pip install Flask
 * gunicorn: pip install gunicorn
