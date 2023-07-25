@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 @app.route('/get_data', methods=['GET', 'POST'])
-def example_get():
+def example_get_post():
     if request.method == 'GET':
         # test:curl "http://127.0.0.1:5000/get_data?name=frank&gender=male"
         print(request.args)  # 获取url中的参数(POST请求也可以获取)
