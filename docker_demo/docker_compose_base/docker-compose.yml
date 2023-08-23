@@ -36,6 +36,9 @@ services:
       discovery.type: single-node
     volumes:
       - data01:/usr/share/elasticsearch/data
+    # Specify a custom container name, rather than a generated default name.
+    container_name:
+      obj_name
     networks:
       - overlay
 
