@@ -9,7 +9,7 @@ package_name = "mypackage"
 # 1. find_packages(where=".") ===>['atest', 'mypackage', 'mypackage1', 'mypackage.mp0', 'mypackage.my1']
 # 2. find_packages(where=".", exclude=("a*", ) ===> ['mypackage', 'mypackage1', 'mypackage.mp0', 'mypackage.my1']
 # 3. 列表表达式if判断 ===> ['mypackage', 'mypackage1', 'mypackage.mp0']
-# 故:安装的包有mypackage、mypackage包下的mp0包、mypackage1包
+# 故:安装的包有mypackage包、mypackage目录下的mp0包、mypackage1包
 packages = [
     package
     for package in find_packages(where=".", # '.'表示当前目录
