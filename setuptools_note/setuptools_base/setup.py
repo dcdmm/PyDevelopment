@@ -3,18 +3,40 @@ from setuptools import setup, find_packages
 
 extras_require = {}
 
+package_name = "mypackage"
+
+# 分析:
+# 1. find_packages(where=".") ===>['atest', 'mypackage', 'mypackage1', 'mypackage.mp0', 'mypackage.my1']
+# 2. find_packages(where=".", exclude=("a*", ) ===> ['mypackage', 'mypackage1', 'mypackage.mp0', 'mypackage.my1']
+# 3. 列表表达式if判断 ===> ['mypackage', 'mypackage1', 'mypackage.mp0']
+# 故:安装的包有mypackage、mypackage包下的mp0包、mypackage1包
+packages = [
+    package
+    for package in find_packages(where=".", # '.'表示当前目录
+                                 exclude=("a*", ))
+    if package == package_name or package == package_name + '1' or package.startswith(package_name + ".mp") 
+] 
+
 setup(
-    name='mypackage',  # A string specifying the name of the package.
-    version='0.0.1',  # A string specifying the version number of the package.
-    description="setuptools test",  # A string describing the package in a single line.
-    author="dcdmm",  # A string specifying the author of the package.
-    author_email="dcdmm@gmail.com",  # A string specifying the email address of the package author.
-    url="https://github.com/dcdmm/setuptools",  # A string specifying the URL for the package homepage.
-    keywords=["python", "setuptools"],  # A list of strings or a comma-separated string providing descriptive meta-data.
-    license="Apache 2.0 License",  # A string specifying the license of the package.
-    
-    # A list of strings specifying the packages that setuptools will manipulate. 
-    packages=find_packages(where='.'), # '.' by default
+    # A string specifying the name of the package.
+    name=package_name,  
+    # # A string specifying the version number of the package.
+    version='0.0.1',
+    # A string describing the package in a single line.
+    description="setuptools test",
+    # A string specifying the author of the package.
+    author="dcdmm",
+    # A string specifying the email address of the package author.
+    author_email="dcdmm@gmail.com",
+    # A string specifying the URL for the package homepage.
+    url="https://github.com/dcdmm/setuptools",
+    # A list of strings or a comma-separated string providing descriptive meta-data.
+    keywords=["python", "setuptools"],
+    # A string specifying the license of the package.
+    license="Apache 2.0 License",
+
+    # A list of strings specifying the packages that setuptools will manipulate.
+    packages=packages,
     # If set to True, this tells setuptools to automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file. For more information, see the section on Including Data Files(https://setuptools.pypa.io/en/latest/userguide/quickstart.html#including-data-files).
     include_package_data=True,
 
