@@ -1,10 +1,10 @@
 ### docker单机部署
 
-参考见:https://milvus.io/docs/install_standalone-docker.md
+具体参考见:https://milvus.io/docs/install_standalone-docker.md
 
 
 ```yaml
-# 下载日期:2023/7/6
+# 记录日期:2023/7/6
 # 版本:milvus-2.2.11
 version: '3.5'
 
