@@ -56,7 +56,7 @@ setup(
     packages=packages,
     # If set to True, this tells setuptools to automatically include any data files it finds inside your package directories that are specified by your MANIFEST.in file.
     # For more information, see the section on Including Data Files(https://setuptools.pypa.io/en/latest/userguide/quickstart.html#including-data-files).
-    include_package_data=True,
+    include_package_data=True,  # 其他相关参考:package_data、exclude_package_data
 
     # A string corresponding to a version specifier (as defined in PEP 440) for the Python version, used to specify the Requires-Python defined in PEP 345.
     python_requires=">=3.6.0",

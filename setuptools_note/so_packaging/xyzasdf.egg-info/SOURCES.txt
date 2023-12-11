@@ -1,0 +1,7 @@
+setup.py
+pybind11_cmake/__init__.py
+pybind11_cmake/func0_base.cpython-310-x86_64-linux-gnu.so
+xyzasdf.egg-info/PKG-INFO
+xyzasdf.egg-info/SOURCES.txt
+xyzasdf.egg-info/dependency_links.txt
+xyzasdf.egg-info/top_level.txt
