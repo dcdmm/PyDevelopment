@@ -1,5 +1,7 @@
 ### 核心包安装
 
+* setuptools: pip install --upgrade setuptools
+* build: pip install --upgrade build 
 * Flask: pip install Flask
 * gunicorn: pip install gunicorn
 * PyMySQL: pip install PyMySQL
