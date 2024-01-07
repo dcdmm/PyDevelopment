@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: xyzqwer
+Version: 0.0.1
+Summary: setuptools test
+Home-page: https://github.com/dcdmm/setuptools
+Author: dcdmm
+Author-email: dcdmm@gmail.com
+License: Apache 2.0 License
+Keywords: python,setuptools
+Requires-Python: >=3.6.0
+Requires-Dist: tqdm
+Requires-Dist: numpy>=1.9.0
+Requires-Dist: scipy>=1.0.0
+Requires-Dist: scikit-learn>=0.18.0
+Requires-Dist: colorama>=0.4.6
