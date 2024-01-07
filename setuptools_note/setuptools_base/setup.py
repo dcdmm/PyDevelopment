@@ -14,11 +14,10 @@ pip uninstall xyzqwer
 Found existing installation: xyzqwer 0.0.1
 Uninstalling xyzqwer-0.0.1:
   Would remove:
-    c:\users\duanm\anaconda3\envs\development_env\lib\site-packages\mypackage1\*
-    c:\users\duanm\anaconda3\envs\development_env\lib\site-packages\mypackage\*
-    c:\users\duanm\anaconda3\envs\development_env\lib\site-packages\xyzqwer-0.0.1.dist-info\*
+    c:\\users\duanm\\anaconda3\envs\development_env\lib\site-packages\mypackage1\*
+    c:\\users\duanm\\anaconda3\envs\development_env\lib\site-packages\mypackage\*
+    c:\\users\duanm\\anaconda3\envs\development_env\lib\site-packages\\xyzqwer-0.0.1.dist-info\*
 Proceed (Y/n)?
-
 '''
 package_name = "xyzqwer"
 
