@@ -46,7 +46,7 @@ class MysqlDB:
         cur.close()
         return data, columns
 
-    def change_data(self, sql):
+    def change_data(self, sql, args=None):
         """
         修改数据---增、删、改
 
@@ -54,10 +54,14 @@ class MysqlDB:
         ---------
         sql : str
             MySQL语句
+
+        args : tuple list
+            其Sequence of sequences or mappings. It is used as parameter.
         """
         cur = self.connector.cursor()
-        row_count = cur.execute(sql)
-        print(row_count, " of affected rows!")
+        self.connector.ping(reconnect=True)
+        row_count = cur.execute(sql, args=args)
+        # print(row_count, " of affected rows!")
         # Commit changes to stable storage
         self.connector.commit()
         cur.close()
