@@ -1,7 +1,11 @@
-Accessing document fields and special variables(参考: https://www.elastic.co/guide/en/elasticsearch/reference/7.11/modules-scripting-fields.html)
+### 主要参考
 
-### funnction_score查询时script_score/script中获取"content"字段(text类型)数据:
-* 方式一:
+* Painless Scripting Language(https://www.elastic.co/guide/en/elasticsearch/reference/7.11/modules-scripting-painless.html)
+* Accessing document fields and special variables(https://www.elastic.co/guide/en/elasticsearch/reference/7.11/modules-scripting-fields.html)
+
+
+### painless脚本获取"content"字段(text类型)数据:
+* doc-values:
 ```markdown
 "mappings": {
     "properties": {
@@ -10,7 +14,12 @@ Accessing document fields and special variables(参考: https://www.elastic.co/g
         }
     }
 }
-doc['content'].value // 报错
+"script": {
+    "source": """
+    doc['content'].value # 报错
+    """""
+}
+
 
 修改如下:
 "mappings": {
@@ -25,10 +34,15 @@ doc['content'].value // 报错
         }
     }
 }
-doc['content.raw'].value // 此时正确
+
+"script": {
+    "source": """
+    doc['content.raw'].value # 此时正确
+    """""
+}
 ```
 
-* 方式二(推荐使用方式一;Accessing the _source field is much slower than using doc-values. ):
+* _source(Accessing the _source field is much slower than using doc-values):
 ```markdown
 "mappings": {
     "properties": {
@@ -37,6 +51,11 @@ doc['content.raw'].value // 此时正确
         }
     }
 }
-params._source.content // 正确
+
+"script": {
+    "source": """
+    params._source.content # 正确
+    """""
+}
 ```
 
