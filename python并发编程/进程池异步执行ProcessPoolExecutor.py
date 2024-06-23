@@ -24,14 +24,13 @@ def fibonacci(n):
 # print('{:.4f} s'.format(end_single - start_single))  # print->40.2218 s
 # # **************************************************************************
 
+# 多进程代码必须在`if __name__ == '__main__':`块中执行
 if __name__ == '__main__':
     # **************************************************************************
     start_f0 = time.time()
 
     # The asynchronous execution can be performed with threads, using ThreadPoolExecutor, or separate processes, using ProcessPoolExecutor.
     # Both implement the same interface, which is defined by the abstract Executor class.
-
-    # 多进程代码必须在`if __name__ == '__main__':`块中执行
 
     """
     max_workers: The maximum number of processes that can be used to execute the given calls.
