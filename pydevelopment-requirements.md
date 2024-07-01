@@ -8,4 +8,3 @@
 * neo4j: python -m pip install neo4j
 * PyMySQL: pip install PyMySQL(与MySQL兼容性查看官方文档)
 * elasticsearch: pip install elasticsearch==7.11.0(与Elasticsearch兼容性查看官方文档)
-* pymilvus: pip install pymilvus(与Milvu兼容性查看官方文档)
