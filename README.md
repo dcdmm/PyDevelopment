@@ -33,6 +33,6 @@
 
 ### 操作分布式搜素哦和分析引擎Elasticsearch
 
-### 操作向量数据库milvus
+### 操作向量数据库qdrant
 
 ### 操作图数据库neo4j
