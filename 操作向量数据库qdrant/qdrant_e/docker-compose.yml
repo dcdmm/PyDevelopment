@@ -1,5 +1,4 @@
-参考:https://qdrant.tech/documentation/guides/installation/
-```yaml
+# 参考:https://qdrant.tech/documentation/guides/installation/
 services:
   qdrant:
     image: qdrant/qdrant:v1.10.0
@@ -21,5 +20,4 @@ services:
 configs:
   qdrant_config:
     content: |
-      log_level: INFO      
-```
+      log_level: INFO   
