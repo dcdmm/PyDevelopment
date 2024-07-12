@@ -3,4 +3,4 @@
 # .pyc文件是.py文件编译后生成的字节码文件(byte code),类似Java的.class文件
 *.pyc
 
-/操作向量数据库qdrant/qdrant_e/qdrant_data
+/操作向量数据库qdrant/qdrant_dc/qdrant_data
