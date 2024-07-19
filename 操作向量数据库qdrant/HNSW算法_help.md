@@ -44,3 +44,13 @@ The NSW graph is built by shuffling dataset points and inserting them one by one
 <img src="img/hnsw2.png">
 
 <center><font size=1>Sequential insertion of nodes (from left to right) with M = 2. At each iteration, a new vertex is added to the graph and linked to its M = 2 nearest neighbours. Blue lines represent the connected edges to a newly inserted node.</font></center>
+
+### HNSW Search
+
+<img src="img/hnsw3.png">
+
+<center><font size=1>Search in HNSW</font></center>
+
+HNSW (Hierarchical Navigable Small World Graph) is a graph-based indexing algorithm. It builds a multi-layer navigation structure for an image according to certain rules. In this structure, the upper layers are more sparse and the distances between nodes are farther. The lower layers are denser and the distances between nodes are closer. The search starts from the uppermost layer, finds the node closest to the target in this layer, and then enters the next layer to begin another search. After multiple iterations, it can quickly approach the target position.
+
+Similarly to NSW, the search quality of HNSW can be improved by using several entry points. 
