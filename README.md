@@ -4,6 +4,16 @@
 
 * web开发Flask框架
 
+### python并发编程
+
+### requests_note
+
+* Python HTTP库
+
+### setuptools_note
+
+* 创建和发布Python包工具
+
 ### uniitest_frame_note
 
 * 自动化测试unittest框架
@@ -24,10 +34,6 @@
 | assertNotIn(a, b)         | a not in b           |
 | assertIsInstance(a, b)    | isinstance(a, b)     |
 | assertNotIsInstance(a, b) | not isinstance(a, b) |
-
-### setuptools_note
-
-* 创建和发布Python包工具
 
 ### 操作mysql数据库
 
