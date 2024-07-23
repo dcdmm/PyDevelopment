@@ -16,4 +16,5 @@ tasks = [asyncio.ensure_future(func1()),
 
 
 loop = asyncio.get_event_loop()
+# loop = asyncio.get_running_loop()
 loop.run_until_complete(asyncio.wait(tasks))
