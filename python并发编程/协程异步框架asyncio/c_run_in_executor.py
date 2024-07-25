@@ -14,7 +14,7 @@ def cpu_bound():
 
 
 # 直接调用阻塞任务:阻塞整个异步事件循环
-# run_in_executor中执行阻塞任务:进程池/线程池中执行阻塞任务,不影响异步事件循环
+# run_in_executor中执行阻塞任务:阻塞任务(进程池/线程池中)后台执行,不影响异步事件循环
 
 async def main():
     # Return the running event loop in the current OS thread.

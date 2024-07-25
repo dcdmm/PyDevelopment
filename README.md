@@ -1,5 +1,9 @@
 # python开发
 
+### fastapi_frame_note
+
+* web开发fastapi框架
+
 ### flask_frame_note
 
 * web开发Flask框架
