@@ -1,4 +1,6 @@
+# docker单节点集群部署
 # 参考:https://qdrant.tech/documentation/guides/installation/
+
 services:
   qdrant:
     image: qdrant/qdrant:v1.10.0
