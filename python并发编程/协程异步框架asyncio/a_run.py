@@ -12,6 +12,6 @@ async def main():
 m = main()
 print(m, type(m))  # print->class 'coroutine'>
 
-# This function runs the passed coroutine, taking care of managing the asyncio event loop and finalizing asynchronous generators.
-# Tis function always creates a new event loop and closes it at the end.
+# Execute the coroutine coro and return the result.
+# This function runs the passed coroutine, taking care of managing the asyncio event loop, finalizing asynchronous generators, and closing the executor.
 asyncio.run(m)
