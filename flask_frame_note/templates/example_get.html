@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+将表单中的数据按`variable=value`的形式追加到URL后(不安全)
+如:http://127.0.0.1:5000/index0?name_=11&password_=22&submit_=提交
+-->
+<form method="get"> <!--发送表单数据时所用的HTTP方法(默认为get)-->
+    账号:
+    <label>
+        <!--单行文本输入框-->
+        <input type="text" name="name_">
+    </label>
+    <br>
+    密码:
+    <label>
+        <!--密码输入框-->
+        <input type="password" name="password_">
+    </label>
+    <br>
+    <!--提交按钮-->
+    <input type="submit" name="submit_">
+</form>
+</body>
+</html>

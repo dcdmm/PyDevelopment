@@ -1,7 +1,7 @@
 from flask import Flask
 import logging
 
-# flask程序报错时,会自动调用`exception`方法记录错误信息
+# flask程序报错时,会自动调用`logging.exceptio`方法记录错误信息
 logging.basicConfig(filename='error.log', filemode='w', level=logging.NOTSET,
                     format="%(asctime)s %(name)s %(levelname)s %(message)s",
                     datefmt='%Y-%m-%d  %H:%M:%S %a')
