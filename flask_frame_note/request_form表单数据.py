@@ -34,7 +34,6 @@ def index1():
     2. 单行文本输入框输入11,密码输入框输入22(发送表单数据时所用的HTTP方法为post)
         1. print语句打印11, 22
         2. 返回JSON数据{"name":"11","password":"22"}
-    ......
     """
     if request.method == 'POST':
         name = request.form.get('name_')  # 从form表单获取name_属性
