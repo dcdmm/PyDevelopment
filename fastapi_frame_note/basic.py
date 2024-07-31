@@ -28,7 +28,15 @@ async def root():
           # If not provided, it will be extracted automatically from the docstring of the path operation function.
           # It can contain Markdown.
           # visible at /docs
-          description="POST请求,返回单个浮点数<p><font color='red' size=40>3.14159</font></p>",  # 默认为None
+          description="""POST请求,返回单个浮点数<p><font color='red' size=40>3.14159</font></p>
+1. one
+    * 1.1
+        * 1.1.1
+        * 1.1.2
+    * 1.2
+    * 1.3
+2. tow
+3. three """,  # 默认为None
           # The description for the default response.
           # visible at /docs
           response_description="Successful Response"  # 默认为None
