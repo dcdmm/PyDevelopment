@@ -1,5 +1,8 @@
-# Test your FastAPI endpoints
+### basic.py
 
-GET http://127.0.0.1:5001/chao
+POST http://127.0.0.1:8000/get_data
+Content-Type: application/json
 
+{}
 
+###

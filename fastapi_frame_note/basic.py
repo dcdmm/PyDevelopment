@@ -5,12 +5,38 @@ import uvicorn
 app = FastAPI()
 
 
-# 只接受'GET'请求
-@app.get("/")
+# 只接受`GET`请求
+@app.get("/",
+         tags=['GET'],
+         summary="这是一个GET请求",
+         description="GET请求,返回一个JSON字符串,内容为'Hello World'",
+         response_description="Successful Response")
 async def root():
-    # 返回值类型可以为:字符串、JSON数据、Pydantic models
+    # 返回值类型可以为:字符串(singular values as str, int, etc.)、dict、list、Pydantic models
     return {"message": "Hello World"}
 
 
+# 只接受`POST`请求
+@app.post("/get_data",
+          # A list of tags to be applied to the path operation.
+          # visible at /docs
+          tags=['POST', 'get_data'],  # 默认为None
+          # A summary for the path operation.
+          # visible at /docs
+          summary="这是一个POST请求",  # 默认为None
+          # A description for the path operation.
+          # If not provided, it will be extracted automatically from the docstring of the path operation function.
+          # It can contain Markdown.
+          # visible at /docs
+          description="POST请求,返回单个浮点数<p><font color='red' size=40>3.14159</font></p>",  # 默认为None
+          # The description for the default response.
+          # visible at /docs
+          response_description="Successful Response"  # 默认为None
+          )
+async def hello_world():
+    return 3.14159
+
+
 if __name__ == '__main__':
+    # API文档(浏览器打开):http://127.0.0.1:8000/docs
     uvicorn.run(app, port=8000)

@@ -15,3 +15,4 @@ Traceback (most recent call last):
     a = 1 / 0
 ZeroDivisionError: division by zero
 2024-07-31  14:53:16 Wed werkzeug INFO 127.0.0.1 - - [31/Jul/2024 14:53:16] "[35m[1mGET /chao HTTP/1.1[0m" 500 -
+2024-07-31  15:28:32 Wed werkzeug INFO 127.0.0.1 - - [31/Jul/2024 15:28:32] "GET /duan HTTP/1.1" 200 -
