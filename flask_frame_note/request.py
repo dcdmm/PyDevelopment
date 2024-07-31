@@ -15,8 +15,8 @@ def example_get_post():
 
     if request.method == 'POST':
         # test:curl -H "Content-Type: application/json" http://127.0.0.1:5000/get_data -d '{"data":123}' -X POST
-        data_json = request.json
-        if data_json is not None:
+        if request.is_json:
+            data_json = request.json
             print(data_json)  # {'data': 123}
             print(type(data_json))  # dict
             return jsonify(data_json)  # {"data":123}

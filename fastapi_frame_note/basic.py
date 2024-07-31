@@ -8,8 +8,8 @@ app = FastAPI()
 # 只接受'GET'请求
 @app.get("/")
 async def root():
-    a = 1 / 0
-    return "<p>Hello, Python!</p>"
+    # 返回值类型可以为:字符串、JSON数据、Pydantic models
+    return {"message": "Hello World"}
 
 
 if __name__ == '__main__':

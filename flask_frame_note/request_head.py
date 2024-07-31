@@ -14,7 +14,6 @@ def example_get():
     -H 'love: play_computer_game' \
     --data '{"key": "value"}'
     """
-    print("json", request.json)  # {'key': 'value'}
     print("Content-Type", request.headers.get('Content-Type'))  # application/json
     print("name", request.headers.get('name'))  # dcdcmm
     print("age", request.headers.get('age'))  # 100

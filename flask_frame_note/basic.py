@@ -13,7 +13,8 @@ app = Flask(__name__)
 # 接受'GET'与'POST'请求
 @app.route("/duan", methods=['GET', 'POST'])
 def hello_world():
-    return "<p>Hello, World!</p>"  # 返回值类型可以为:字符串、JSON数据、Renders a template
+    # 返回值类型可以为:字符串、JSON response(dict或list自动转换为JSON response)
+    return "<p>Hello, World!</p>"
 
 
 # 只接受'GET'请求
