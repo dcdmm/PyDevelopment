@@ -20,7 +20,7 @@ Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork 
 The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resources, and fairly speedy.
 '''
 # gunicorn部署flask:
-# Linux:gunicorn -c conf/gunicorn.py main:app
-# docker:CMD ["gunicorn", "-c", "conf/gunicorn.py", "main:app"]
+# Linux:`gunicorn -c conf/gunicorn.py main:app`
+# docker:`CMD ["gunicorn", "-c", "conf/gunicorn.py", "main:app"]`
 if __name__ == '__main__':
     app.run(debug=True)

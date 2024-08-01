@@ -10,13 +10,13 @@ app = Flask(__name__)
 @app.route('/user/<int:num>')  # num表示变量
 def index(num):
     if num == 1:
-        # test:curl http://127.0.0.1:5000/user/1
+        # test:`GET http://127.0.0.1:5000/user/1`
         return "1: python"
     if num == 2:
-        # test:curl http://127.0.0.1:5000/user/2
+        # test:`GET http://127.0.0.1:5000/user/2`
         return "2: java"
     if num == 3:
-        # test:curl http://127.0.0.1:5000/user/3
+        # test:`GET http://127.0.0.1:5000/user/3`
         return "3: c++"
     return "other: hello world"
 

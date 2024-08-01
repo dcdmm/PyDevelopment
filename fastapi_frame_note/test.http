@@ -5,4 +5,17 @@ Content-Type: application/json
 
 {}
 
+### 路径参数.py
+
+GET 127.0.0.1:8000/items/duan
+
+
+###
+
+GET 127.0.0.1:8000/items_typing/chao
+
+###
+
+GET 127.0.0.1:8000/items_typing/4.3
+
 ###

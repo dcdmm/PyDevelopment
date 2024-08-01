@@ -14,7 +14,7 @@ def index():
     # Serialize the given arguments as JSON, and return a :class:`~flask.Response` object with the ``application/json`` mimetype.
     # A dict or list returned from a view will be converted to a JSON response automatically without needing to call this.
     json_e = jsonify(code=200, status=0, message='ok', value=data)
-    print(json_e.json)  # {'code': 200, 'message': 'ok', 'status': 0, 'value': {'name': '您本次体检血压示:<b>150182 mmHg</b>。'}}
+    print(json_e.json)  # print->{'code': 200, 'message': 'ok', 'status': 0, 'value': {'name': '您本次体检血压示:<b>150182 mmHg</b>。'}}
     return jsonify(code=200, status=0, message='ok', value=data)
 
 

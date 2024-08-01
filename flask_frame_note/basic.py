@@ -36,6 +36,6 @@ def hello_python():
     port defined in the ``SERVER_NAME`` config variable if present.
 '''
 if __name__ == '__main__':
-    # app.run(host='0.0.0.0') # 还可以通过`curl http://外网ip地址:5000/duan`访问
+    # app.run(host='0.0.0.0') # 还可以通过`GET http://外网ip地址:5000/duan`访问
     app.run(port=5001)
-    # app.run(debug=True, port=5001)  # test:`curl http://127.0.0.1:5001/duan`或`curl http://内网ip地址:5001/duan`
+    # app.run(debug=True, port=5001)  # test:`GET http://127.0.0.1:5001/duan`或`GET http://内网ip地址:5001/duan`
