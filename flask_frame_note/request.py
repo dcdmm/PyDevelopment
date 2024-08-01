@@ -14,6 +14,7 @@ def example_get_post():
         return jsonify({'name': name, 'gender': gender})
 
     if request.method == 'POST':
+        # Check if the mimetype indicates JSON data, either :mimetype:`application/json` or :mimetype:`application/*+json`.
         if request.is_json:
             """
             # test:

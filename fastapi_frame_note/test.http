@@ -5,10 +5,23 @@ Content-Type: application/json
 
 {}
 
-### 变量_查询参数
+### 变量_查询参数.py
 
 GET http://127.0.0.1:8000/items/?a=0&b=10
 
 ###
 
 GET http://127.0.0.1:8000/users/1/items/one/?q=china
+
+
+### 请求体JSON数据.py
+
+POST http://127.0.0.1:8000/items/1?q=china
+Content-Type: application/json
+
+{
+    "name": "Foo",
+    "description": "An optional description",
+    "price": 45.2,
+    "tax": 3.5
+}
