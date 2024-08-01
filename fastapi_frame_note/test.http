@@ -16,12 +16,20 @@ GET http://127.0.0.1:8000/users/1/items/one/?q=china
 
 ### 请求体JSON数据.py
 
-POST http://127.0.0.1:8000/items/1?q=china
+POST http://127.0.0.1:8000/items_many/1
 Content-Type: application/json
 
 {
+  "item": {
     "name": "Foo",
-    "description": "An optional description",
-    "price": 45.2,
-    "tax": 3.5
+    "description": "The pretender",
+    "price": 42.0,
+    "tax": 3.2
+  },
+  "user": {
+    "username": "dave",
+    "full_name": "Dave Grohl"
+  }
 }
+
+###
