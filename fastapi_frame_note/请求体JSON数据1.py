@@ -1,7 +1,7 @@
 from typing import Annotated
 import uvicorn
 from fastapi import Body, FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 app = FastAPI()
 
@@ -9,7 +9,7 @@ app = FastAPI()
 class Item(BaseModel):
     name: str
     description: str | None = None
-    price: float
+    price: float = Field(gt=0, description="The price must be greater than zero")
     tax: float | None = None
 
 
