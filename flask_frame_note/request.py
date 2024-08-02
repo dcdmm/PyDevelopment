@@ -3,12 +3,13 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-@app.route('/get_data', methods=['GET', 'POST'])
-def example_get_post():
+@app.route('/get_data/<int:num>', methods=['GET', 'POST'])
+def example_get_post(num):
     if request.method == 'GET':
-        # test: GET 127.0.0.1:5000/get_data?name=frank&gender=male
-        print(request.args)  # 获取url中的参数(POST请求也可以获取)
-        print(type(request.args))  # werkzeug.datastructures.ImmutableMultiDict
+        print(num)  # print->print->1
+        # test: GET 127.0.0.1:5000/get_data/1?name=frank&gender=male
+        print(request.args)  # print->ImmutableMultiDict([('name', 'frank'), ('gender', 'male')])
+        print(type(request.args))  # print->werkzeug.datastructures.ImmutableMultiDict
         name = request.args.get('name')
         gender = request.args.get('gender')
         return jsonify({'name': name, 'gender': gender})

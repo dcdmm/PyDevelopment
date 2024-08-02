@@ -8,11 +8,11 @@ null
 
 ### 变量_查询参数.py
 
-GET http://127.0.0.1:8000/items/?a=0&b=10
+GET http://127.0.0.1:8000/items?a=0&b=10
 
 ###
 
-GET http://127.0.0.1:8000/users/1/items/one/?q=china
+GET http://127.0.0.1:8000/users/1/items/one?q=china
 
 
 ### 请求体JSON数据0.py
@@ -43,30 +43,35 @@ Content-Type: application/json
   "importance": 3
 }
 
+### request.py
+
+
+POST http://127.0.0.1:8000/post_data/1
+Content-Type: application/x-www-form-urlencoded
+
+data=123
+
 ###
 
-POST http://127.0.0.1:8000/items/1
+POST http://127.0.0.1:8000/post_data/1?a=1&b=2
 Content-Type: application/json
+name: dcdmm
+age: 100
+love: play_computer_game
 
 {
-    "name": "Foo",
-    "description": "The pretender",
-    "price": 42.0,
-    "tax": 3.2,
-    "tags": [
-        "rock",
-        "metal",
-        "bar"
-    ],
-    "images": [
-        {
-            "url": "http://example.com/baz.jpg",
-            "name": "The Foo live"
-        },
-        {
-            "url": "http://example.com/dave.jpg",
-            "name": "The Baz"
-        }
-    ]
+  "name": "dcdmm",
+  "age": 1000
 }
 
+###
+
+POST 127.0.0.1:5000/get_data
+Content-Type: application/json
+name: dcdmm
+age: 100
+love: play_computer_game
+
+{
+    "key": "value"
+}

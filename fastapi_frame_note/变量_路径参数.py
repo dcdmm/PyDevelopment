@@ -13,11 +13,11 @@ async def read_item(item_id):  # 路径参数`item_id`传递给函数参数`item
 @app.get("/items_typing/{item_id}")
 async def read_item_typing(item_id: int):  # 使用类型注解声明函数中路径参数的类型(item_id被声明为int类型,默认为字符串)
     """
-    # test(HTTP error):
+    # test01(HTTP error):
     `GET 127.0.0.1:8000/items_typing/chao`
     "msg": "Input should be a valid integer, unable to parse string as an integer"
 
-    # test(HTTP error):
+    # test02(HTTP error):
     `GET 127.0.0.1:8000/items_typing/4.3`
     "msg": "Input should be a valid integer, unable to parse string as an integer",
     """

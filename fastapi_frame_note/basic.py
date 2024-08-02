@@ -13,7 +13,7 @@ app = FastAPI()
          response_description="Successful Response")
 async def root():
     # 返回值类型可以为:字符串(singular values as str, int, etc.)、dict、list、Pydantic models
-    return {"message": "Hello World"}
+    return {"message": "Hello World, 你好,中国"}
 
 
 # 只接受`POST`请求
