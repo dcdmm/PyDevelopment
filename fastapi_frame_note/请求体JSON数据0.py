@@ -16,7 +16,7 @@ app = FastAPI()
 @app.post("/items/{item_id}")
 async def create_item(
         item_id: int,  # 路径参数
-        item: Item | None = None,  # 请求体JSON数据(参数类型是Pydantic models)
+        item: Item | None = None,  # 请求体JSON数据(dict)参数(参数类型继承自pydantic BaseModel)
         q: str | None = None  # 查询参数
 ):
     """
@@ -60,7 +60,7 @@ class User(BaseModel):
 @app.post("/items_many/{item_id}")
 async def update_item(
         item_id: int,
-        # 参数item,user类型都是Pydantic models(参数名称作为请求体JSON数据中的键)
+        # 多个请求体JSON数据参数时,参数名称作为请求体JSON数据中的键
         item: Item, user: User
 ):
     """

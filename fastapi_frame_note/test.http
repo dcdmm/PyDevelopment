@@ -3,7 +3,8 @@
 POST http://127.0.0.1:8000/get_data
 Content-Type: application/json
 
-{}
+null
+
 
 ### 变量_查询参数.py
 
@@ -14,7 +15,7 @@ GET http://127.0.0.1:8000/items/?a=0&b=10
 GET http://127.0.0.1:8000/users/1/items/one/?q=china
 
 
-### 请求体JSON数据.py
+### 请求体JSON数据0.py
 
 POST http://127.0.0.1:8000/items_many/1
 Content-Type: application/json
@@ -30,6 +31,16 @@ Content-Type: application/json
     "username": "dave",
     "full_name": "Dave Grohl"
   }
+}
+
+
+### 请求体JSON数据1.py
+
+POST http://127.0.0.1:8000/items10
+Content-Type: application/json
+
+{
+  "importance": 3
 }
 
 ###
