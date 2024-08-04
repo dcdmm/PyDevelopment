@@ -15,8 +15,7 @@ def example_get_post(num):
         return jsonify({'name': name, 'gender': gender})
 
     if request.method == 'POST':
-        # Check if the mimetype indicates JSON data, either :mimetype:`application/json` or :mimetype:`application/*+json`.
-        if request.is_json:
+        if request.headers.get('Content-Type') == 'application/json':
             """
             # test:
             POST 127.0.0.1:5000/get_data
@@ -33,7 +32,7 @@ def example_get_post(num):
             print(data_json)  # print->{'data': 123}
             print(type(data_json))  # print->dict
             return jsonify(data_json)  # print->{"data":123}
-        else:
+        if request.headers.get('Content-Type') == 'application/x-www-form-urlencoded':
             """
             # test:
             ```

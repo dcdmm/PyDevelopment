@@ -8,10 +8,6 @@ null
 
 ### 变量_查询参数.py
 
-GET http://127.0.0.1:8000/items?a=0&b=10
-
-###
-
 GET http://127.0.0.1:8000/users/1/items/one?q=china
 
 
