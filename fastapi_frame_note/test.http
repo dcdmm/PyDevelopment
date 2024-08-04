@@ -60,14 +60,3 @@ love: play_computer_game
   "age": 1000
 }
 
-###
-
-POST 127.0.0.1:5000/get_data
-Content-Type: application/json
-name: dcdmm
-age: 100
-love: play_computer_game
-
-{
-    "key": "value"
-}
