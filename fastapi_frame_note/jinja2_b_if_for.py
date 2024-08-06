@@ -16,7 +16,7 @@ def index(request: Request):
     return templates.TemplateResponse(
         "jinja2_if_for.html",
         context={
-            "request": request,  # context中必须添加该键值对
+            "request": request,
             "age": age,
             "lst": lst,
             "dit": dit

@@ -5,7 +5,9 @@ from fastapi import Request
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(
+    directory="templates"  # 模板文件所在文件夹
+)
 
 
 class Play:
@@ -27,6 +29,7 @@ def index(request: Request):
         "jinja2_variables.html",
         context={
             "request": request,  # context中必须添加该键值对
+            # `user_name`: jinja2中的变量名
             "user_name": name,
             "user_age": age,
             "user_like": like,

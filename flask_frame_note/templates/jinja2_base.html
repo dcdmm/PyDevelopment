@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--jinjia2语法参考PyDevelopment\fastapi_frame_note\templates-->
+<p>用户名:{{user_name}}</p>
+<p>喜好:{{user_like}}</p>
+<p>喜好_0:{{user_like[0]}}</p>
+<p>其他:{{user_other}}</p>
+<p>其他_国籍:{{user_other["countery"]}}</p>
+<p>用户名的大写:{{user_name.upper()}}</p>
+<p>每天玩的时间:{{user_play.play_min}}分钟</p>
+<p>玩的开不开心:{{user_play.play_info("非常")}}</p>
+<p></p>
+</body>
+</html>
