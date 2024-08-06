@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import logging
 
 # flask程序报错时,会自动调用`logging.exceptio`方法记录错误信息
@@ -10,11 +10,16 @@ logging.basicConfig(filename='error.log', filemode='w', level=logging.NOTSET,
 app = Flask(__name__)
 
 
-# 接受`GET`与`POST`请求
+# 接受`GET`或`POST`请求
 @app.route("/duan", methods=['GET', 'POST'])
 def hello_world():
-    # 返回值类型可以为:字符串、JSON response(dict或list自动转换为JSON response)
-    return "<p>Hello, World!</p>"
+    # HTTP请求方法
+    request_method = request.method
+    if request_method == 'GET':
+        # 返回值类型可以为:字符串、JSON response(dict或list自动转换为JSON response)
+        return "GET"
+    if request.method == 'POST':
+        return "POST"
 
 
 # 只接受`GET`请求

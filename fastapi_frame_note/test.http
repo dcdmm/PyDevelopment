@@ -5,6 +5,17 @@ Content-Type: application/json
 
 null
 
+###
+
+GET http://127.0.0.1:8000/duan
+
+###
+
+POST http://127.0.0.1:8000/duan
+
+Content-Type: application/json
+
+null
 
 ### 变量_查询参数.py
 
@@ -45,7 +56,7 @@ Content-Type: application/json
 POST http://127.0.0.1:8000/post_data/1
 Content-Type: application/x-www-form-urlencoded
 
-data=123
+data = 123
 
 ###
 

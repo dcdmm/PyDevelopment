@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import uvicorn
 
 # create a FastAPI "instance"
@@ -43,6 +43,18 @@ async def root():
           )
 async def hello_world():
     return 3.14159
+
+
+# 接受`GET`或`POST`请求
+@app.get("/duan")
+@app.post("/duan")
+async def hello_python(request: Request):
+    # HTTP请求方法
+    request_method = request.method
+    if request_method == 'GET':
+        return "GET"
+    if request.method == 'POST':
+        return "POST"
 
 
 if __name__ == '__main__':
