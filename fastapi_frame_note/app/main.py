@@ -8,10 +8,10 @@ import mul
 app = FastAPI()
 
 # 添加该模块所有路由函数
-app.include_router(zero_sub.router,
-                   prefix='/xxx'  # 该模块所有所有路由函数路径添加前缀`/xxx`
+app.include_router(zero_plus.router,
+                   prefix='/yyy'  # 该模块所有路由函数路径添加前缀`/xxx`
                    )
-app.include_router(zero_plus.router, prefix='/yyy')
+app.include_router(zero_sub.router, prefix='/xxx')
 app.include_router(mul.router)
 
 

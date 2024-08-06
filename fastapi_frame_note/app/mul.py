@@ -3,7 +3,7 @@ from fastapi import APIRouter
 router = APIRouter()
 
 
-@router.get("/mul/", tags=["mul"])
+@router.get("/mul/", tags=["mul", "root"])
 async def read_users():
     return 1
 

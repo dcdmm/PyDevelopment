@@ -4,7 +4,11 @@ from fastapi import APIRouter
 router = APIRouter()
 
 
-@router.get("/sum/", tags=["sum"])
+@router.get("/sum/",
+            tags=["sum", "root"],
+            summary="`GET`,`sum roo`",
+            description="<p><font color='red' size=40>GET请求,sum 根路径,返回值为0</font></p>",
+            response_description="Successful Response")
 async def read_users():
     return 0
 
