@@ -5,6 +5,37 @@
     <title>Title</title>
 </head>
 <body>
+<!--if条件1:如果年龄大于18-->
+{% if age > 18 %}
+<li>hello world</li>
+<li>hello python</li>
+<!--if条件2:如果年龄不大于18但大于15-->
+{% elif age > 10 %}
+<li>数学</li>
+<li>物理</li>
+<!--if条件3,条件2均不满足时-->
+{% else %}
+<li>喜羊羊与灰太狼</li>
+<li>熊大熊二</li>
+{% endif %}
 
+<br>
+
+<!--迭代列表-->
+{% for i in lst %}
+{% if i > 2 %}
+<li>数大于2:{{i}}</li>
+{% else %}
+<li>数小于等于2:{{i}}</li>
+{% endif %}
+{% endfor %}
+
+<br>
+
+<!--迭代字典-->
+{% for key, value in dit.items() %}
+<li>键:{{key}}</li>
+<li>值:{{value}}</li>
+{% endfor %}
 </body>
 </html>
