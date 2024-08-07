@@ -6,6 +6,7 @@ async def say_after(delay, what):
     print("start:", what)
     await asyncio.sleep(delay)
     print("end:", what)
+    return what
 
 
 """
@@ -20,14 +21,16 @@ Event loops use cooperative scheduling: an event loop runs one Task at a time. W
 async def main():
     # Wrap the coro coroutine into a Task and schedule its execution. Return the Task object.
     task1 = asyncio.create_task(
-        say_after(1, 'hello'))
+        say_after(2, 'hello'))
     task2 = asyncio.create_task(
-        say_after(2, 'world'))
+        say_after(1, 'world'))
 
     print(f"started at {time.strftime('%X')}")
 
-    await task1
-    await task2
+    r1 = await task1
+    print(r1)  # print->hello
+    r2 = await task2
+    print(r2)  # print->world
 
     print(f"finished at {time.strftime('%X')}")  # 总耗时2s
 
