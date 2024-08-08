@@ -44,10 +44,10 @@ async def post_data(request: Request):
     # test02 ===> print->application/x-www-form-urlencoded
     print(request.url)
     if request.headers.get('Content-Type') == 'application/json':
-        data = await request.json()
+        data = await request.json()  # json是协程函数(前添加`await`关键字)
         print(data)  # test01 ===> print->{'name': 'dcdmm', 'age': 1000}
     else:
-        form_data = await request.form()
+        form_data = await request.form() # form是协程函数(前添加`await`关键字)
         print(form_data)  # test02 ===> print->FormData([('data', '123')])
         print(type(form_data))  # test02 ===> print-><class 'starlette.datastructures.FormData'>
         print(form_data.get("data"))  # test02 ===> print->123

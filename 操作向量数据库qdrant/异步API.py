@@ -2,7 +2,8 @@ import asyncio
 from qdrant_client import models
 from qdrant_client import AsyncQdrantClient
 
-
+# The AsyncQdrantClient provides the same methods as the synchronous counterpart QdrantClient.
+# 同步操作(QdrantClient)切换到异步操作(AsyncQdrantClient)只需在方法调用前添加`await`关键字即可(upload_collection方法除外,仍是普通函数)
 aqc = AsyncQdrantClient(url="http://localhost:6333")
 
 
@@ -47,17 +48,17 @@ async def search(client, query_vector):
 
 
 async def main(client):
-    vectors = [[0.1, 0.1, 0.1]] * 100
-    result_list = await asyncio.gather(*[search(client, q) for q in vectors])
+    vectors = [[0.1, 0.1, 0.1]] * 1000
+    semaphore = asyncio.Semaphore(100)  # 并发限制
+
+    async def search_with_limit(query_vector):
+        async with semaphore:
+            return await search(client, query_vector)
+
+    result_list = await asyncio.gather(*[search_with_limit(q) for q in vectors])
     print(result_list)
 
 
 asyncio.run(create(aqc))
 asyncio.run(upsert(aqc))
-
-import time
-
-t0 = time.time()
 asyncio.run(main(aqc))
-t1 = time.time()
-print(t1 - t0)
