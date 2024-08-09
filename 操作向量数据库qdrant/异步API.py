@@ -1,6 +1,5 @@
 import asyncio
-from qdrant_client import models
-from qdrant_client import AsyncQdrantClient
+from qdrant_client import AsyncQdrantClient, models
 
 # The AsyncQdrantClient provides the same methods as the synchronous counterpart QdrantClient.
 # 同步操作(QdrantClient)切换到异步操作(AsyncQdrantClient)只需在方法调用前添加`await`关键字即可(upload_collection方法除外,仍是普通函数)
@@ -59,6 +58,10 @@ async def main(client):
     print(result_list)
 
 
-asyncio.run(create(aqc))
-asyncio.run(upsert(aqc))
-asyncio.run(main(aqc))
+async def run_all(aqc):
+    await create(aqc)
+    await upsert(aqc)
+    await main(aqc)
+
+
+asyncio.run(run_all(aqc))

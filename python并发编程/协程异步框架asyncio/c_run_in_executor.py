@@ -13,10 +13,22 @@ def cpu_bound():
     return sum(i * i for i in range(10 ** 7))
 
 
+async def say_after(delay, what):
+    await asyncio.sleep(delay)
+    print("say_after", what)
+    return what
+
+
+async def async_job():
+    l = await asyncio.gather(say_after(1, 'hello'),
+                             say_after(2, 'world'))
+    print("async_job", l)
+
+
 # 直接调用阻塞任务:阻塞整个异步事件循环
 # run_in_executor中执行阻塞任务:阻塞任务(进程池/线程池中)后台执行,不影响异步事件循环
 
-async def main():
+async def not_async_job():
     # Return the running event loop in the current OS thread.
     loop = asyncio.get_running_loop()
 
@@ -35,5 +47,11 @@ async def main():
         print('ProcessPoolExecutor', result)
 
 
+async def run_all():
+    await say_after(1, "dcdmm")
+    await async_job()
+    await not_async_job()
+
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(run_all())
