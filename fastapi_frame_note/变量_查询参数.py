@@ -19,7 +19,7 @@ async def read_user_item(
         user_id: int,
         q: str | None = None,
         short: bool = False
-):  # user_id、item_id为可位置参数,q、short为查询参数;不需要按照特定顺序声明参数(参数通过名称识别)
+):  # user_id、item_id为位置参数,q、short为查询参数;不需要按照特定顺序声明参数(参数通过名称识别)
     return {"user_id": user_id, "item_id": item_id, "q": q, "short": short}
 
 
