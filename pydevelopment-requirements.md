@@ -10,3 +10,4 @@
 * PyMySQL: pip install PyMySQL(与MySQL兼容性查看官方文档)
 * elasticsearch: pip install elasticsearch==7.11.0(与Elasticsearch兼容性查看官方文档)
 * qdrant: pip install qdrant-client
+* streamit: pip install streamlit
