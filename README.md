@@ -14,6 +14,10 @@
 
 * Python HTTP库
 
+### streamit_ntoe
+
+* python数据科学web可视化框架
+
 ### setuptools_note
 
 * 创建和发布Python包工具
