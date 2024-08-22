@@ -4,10 +4,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+# Prints the formatted Markdown string, with support for LaTeX expression, emoji shortcodes, and colored text
 st.write("hello world")  # 字符串
-st.write({"a": 1, "b": 2})  # 字典
 
-string = """## one
+md = """## one
 ```python
 import numpy as np
 
@@ -21,7 +21,9 @@ for i in range(10):
     * 2.3
 ## three
 $$ x^2 + y^2 = 1$$"""
-st.write(string)  # 支持markdown字符串
+st.write(md)
+
+st.write({"a": 1, "b": 2})  # 字典
 
 df = pd.DataFrame(
     {

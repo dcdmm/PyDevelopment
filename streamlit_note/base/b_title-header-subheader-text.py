@@ -20,3 +20,13 @@ st.header("header 5", divider='red')
 st.subheader('subhead 5.1', divider='red')
 st.header("header 6", divider='orange')
 st.subheader('subhead 6.1', divider='orange')
+
+st.write("hello\nworld\n!python")  # markdown文本(\n不会换行)
+st.text("hello\nworld\n!python")
+# markdown换行(行尾输入2个空格)
+md = """hello  
+world  
+!python"""
+st.write(md)
+
+
