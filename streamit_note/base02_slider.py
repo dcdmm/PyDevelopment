@@ -14,6 +14,6 @@ a = st.slider(
 )
 st.write("a value: ", a)
 
-b = st.slider("(范围)滑块 b", 0.0, 100.0, (25.0, 75.0), step=0.01)
+b = st.slider("(范围)滑块 b", 0.0, 100.0, [25.0, 75.0], step=0.01)
 print(type(b))  # print-><class 'tuple'>
 st.write("b value: ", b)
