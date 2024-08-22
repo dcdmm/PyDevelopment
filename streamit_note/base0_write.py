@@ -34,7 +34,7 @@ y = np.random.normal(0, 1, 1000)
 fig, ax = plt.subplots()
 ax.hist(y, bins=50)
 ax.set_title("normal distribution")
-st.write(fig)  # matplotlib图形
+st.write(fig)  # matplotlib Figure
 
 # 传递多个参数
 st.write("1+1=", "2")
