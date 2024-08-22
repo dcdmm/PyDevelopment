@@ -14,7 +14,7 @@
 
 * Python HTTP库
 
-### streamit_ntoe
+### streamlit_ntoe
 
 * python数据科学web可视化框架
 
