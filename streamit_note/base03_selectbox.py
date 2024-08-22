@@ -1,7 +1,9 @@
 import streamlit as st
 
 a = st.selectbox(
+    # A short label explaining to the user what this select widget is for.
     label="选择框 a",
+    # Labels for the select options in an Iterable.
     options=["python", "c++", "rust"],
 )
 
