@@ -2,6 +2,7 @@ import numpy as np
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.write("hello world")  # 字符串
 st.write({"a": 1, "b": 2})  # 字典
@@ -34,7 +35,14 @@ y = np.random.normal(0, 1, 1000)
 fig, ax = plt.subplots()
 ax.hist(y, bins=50)
 ax.set_title("normal distribution")
-st.write(fig)  # matplotlib Figure
+st.write(fig)  # matplotlib figure
+
+data = [[1, 20, 30],
+        [20, 1, 60],
+        [30, 60, 1]]
+fig_px = px.imshow(data,
+                   title='Heatmaps in Python')
+st.write(fig_px)  # Plotly figure.
 
 # 传递多个参数
 st.write("1+1=", "2")
