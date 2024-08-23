@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
 
-st.page_link(page="i_page_link-link_button.py",  # 启动脚本文件(i_page_link-link_button.py)web页面
+st.page_link(page="i_page_link-link_button.py",  # 启动脚本文件(app.py)web页面
              label="Home页面", icon="🏠")
 
 data = [[1, 20, 30],
