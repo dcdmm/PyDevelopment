@@ -19,4 +19,11 @@ st.write('c' in st.session_state)  # False
 del st.session_state.b
 st.write(st.session_state)  # {"a": 2}
 
+for i in st.session_state.keys():
+    st.write(i)
 
+for j in st.session_state.values():
+    st.write(j)
+
+for k in st.session_state.items():
+    st.write(k)
