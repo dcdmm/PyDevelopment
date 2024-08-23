@@ -9,5 +9,7 @@ s = st.slider("slider: ", 0.0, 100.0, [25.0, 75.0], key="slider")
 ti = st.text_input(label="text_input: ", key="text_input")
 ta = st.text_area(label="text_area: ", key="text_area")
 t = st.toggle(label="toggle: ", key="toggle")
+b0 = st.button(label="button0: ", type="primary", key='button0')
+b1 = st.button(label="button1: ", type="secondary", key='button1')
 
 st.write(st.session_state)
