@@ -49,3 +49,5 @@ st.write(fig_px)  # Plotly figure.
 # 传递多个参数
 st.write("1+1=", "2")
 st.write("Below is a DataFrame:", df, "Above is a dataframe.")
+
+
