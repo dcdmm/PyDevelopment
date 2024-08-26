@@ -4,7 +4,8 @@ import streamlit as st
 st.success(
     # The info text to display.
     body='This is a success message!',
-    # An optional emoji or icon to display next to the alert. If icon is None (default), no icon is displayed.
+    # An optional emoji or icon to display next to the alert.
+    # If icon is None (default), no icon is displayed.
     icon="✅"
 )
 

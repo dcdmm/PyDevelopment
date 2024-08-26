@@ -1,5 +1,6 @@
 import streamlit as st
 
+# Display a link to another page in a multipage app or to an external page.
 st.page_link(page="pages/matplotlib_f.py",  # 启动脚本文件(app.py)同目录pages目录(目录名必须为pages)下matplotlib_f.py web页面
              # The label for the page link. Labels are required for external pages
              label="pages/matplotlib_f.py链接",
