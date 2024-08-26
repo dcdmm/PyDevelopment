@@ -1,22 +1,13 @@
 import streamlit as st
-import random
-import time
+from openai import OpenAI
 
+# 智谱AI
+client = OpenAI(
+    api_key="9cc4190f4f728c2743b4038ba593cafa.1wWwnSFyy5NczGAf",
+    base_url="https://open.bigmodel.cn/api/paas/v4/"
+)
 
-def response_generator():
-    response = random.choice(
-        [
-            "Hello there! How can I assist you today?",
-            "Hi, human! Is there anything I can help you with?",
-            "Do you need help?",
-        ]
-    )
-    for word in response.split():
-        yield word + " "
-        time.sleep(0.05)
-
-
-st.title("demo0")
+st.title("chat demo0")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -32,5 +23,13 @@ if prompt := st.chat_input("What is up?"):  # 海象运算符
         st.write(prompt)
 
     with st.chat_message("assistant"):
-        response = st.write_stream(response_generator())
+        stream = client.chat.completions.create(
+            model="glm-4-flash",
+            messages=[
+                {"role": m["role"], "content": m["content"]}
+                for m in st.session_state.messages
+            ],
+            stream=True
+        )
+        response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
