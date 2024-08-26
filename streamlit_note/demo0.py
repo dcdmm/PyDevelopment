@@ -3,7 +3,6 @@ import random
 import time
 
 
-# Streamed response emulator
 def response_generator():
     response = random.choice(
         [
@@ -17,27 +16,21 @@ def response_generator():
         time.sleep(0.05)
 
 
-st.title("Simple chat")
+st.title("demo0")
 
-# Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display chat messages from history on app rerun
+# 历史聊天记录展示
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+        st.write(message["content"])
 
-# Accept user input
-if prompt := st.chat_input("What is up?"):
-    # Add user message to chat history
+if prompt := st.chat_input("What is up?"):  # 海象运算符
     st.session_state.messages.append({"role": "user", "content": prompt})
-    # Display user message in chat message container
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.write(prompt)
 
-    # Display assistant response in chat message container
     with st.chat_message("assistant"):
         response = st.write_stream(response_generator())
-    # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
