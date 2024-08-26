@@ -10,18 +10,29 @@ def a_to_b():
         st.session_state.b = '日本非常缺乏资源'
 
 
-a = st.selectbox("选择框", ["china", "usa", "japean"], key='a', on_change=a_to_b)
+a = st.selectbox("选择框", ["china", "usa", "japean"], key='a',
+                 # 支持该参数的API有:
+                 # checkbox
+                 # multiselect
+                 # radio
+                 # selectbox
+                 # slider
+                 # text_input
+                 # text_area
+                 # toggle
+                 on_change=a_to_b  # An optional callback invoked when this checkbox's value changes.
+                 )
 
 b = st.text_input(label="文本输入框", key='b')
 
 
-def c_to_d():
+def low_to_upper():
     st.session_state.d = st.session_state.c.upper()
 
 
-def d_to_c():
+def upper_to_lower():
     st.session_state.c = st.session_state.d.lower()
 
 
-st.text_input(label="ti c", key='c', on_change=c_to_d)
-st.text_input(label="ti d", key='d', on_change=d_to_c)
+st.text_input(label="文本输入框 c", key='c', on_change=low_to_upper)
+st.text_input(label="文本输入框 d", key='d', on_change=upper_to_lower)
