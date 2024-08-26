@@ -10,5 +10,3 @@ st.page_link(page="pages/plotly_f.py",  # 启动脚本文件(app.py)同目录pag
              label="pages/plotly_f.py链接", icon="2️⃣")
 st.page_link(page="http://www.baidu.com",  # 外部页面URL链接
              label="百度链接", icon="🌎")
-
-st.link_button(label="URL链接按钮", url="https://www.bilibili.com/")
