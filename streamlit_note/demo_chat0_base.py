@@ -1,10 +1,9 @@
 import streamlit as st
-from openai import OpenAI
+from openai import OpenAI  # 统一使用openai接口
 
 client = OpenAI(
     api_key="9cc4190f4f728c2743b4038ba593cafa.1wWwnSFyy5NczGAf",
-    # 智谱AI
-    base_url="https://open.bigmodel.cn/api/paas/v4/"
+    base_url="https://open.bigmodel.cn/api/paas/v4/"  # 智谱AI
 )
 
 st.title("chat demo0")
@@ -17,7 +16,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
-if prompt := st.chat_input("What is up?"):  # 海象运算符
+if prompt := st.chat_input("What is up?"):  # 海象运算符(:=)
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)
