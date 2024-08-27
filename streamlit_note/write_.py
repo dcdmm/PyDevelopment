@@ -51,3 +51,5 @@ st.write("1+1=", "2")
 st.write("Below is a DataFrame:", df, "Above is a dataframe.")
 
 
+# 命令行只想
+# streamlit run write_.py
