@@ -1,9 +1,9 @@
 import streamlit as st
 from openai import OpenAI
 
-# 智谱AI
 client = OpenAI(
     api_key="9cc4190f4f728c2743b4038ba593cafa.1wWwnSFyy5NczGAf",
+    # 智谱AI
     base_url="https://open.bigmodel.cn/api/paas/v4/"
 )
 
