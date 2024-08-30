@@ -31,7 +31,7 @@ def hello_python():
     return "<p>Hello, Python!</p>"
 
 
-'''
+"""
 :param host: the hostname to listen on. Set this to ``'0.0.0.0'`` to
     have the server available externally as well. Defaults to
     ``'127.0.0.1'`` or the host in the ``SERVER_NAME`` config variable
@@ -39,7 +39,7 @@ def hello_python():
     
 :param port: the port of the webserver. Defaults to ``5000`` or the
     port defined in the ``SERVER_NAME`` config variable if present.
-'''
+"""
 if __name__ == '__main__':
     # app.run(host='0.0.0.0') # 还可以通过`GET http://外网ip地址:5000/duan`访问
     app.run(port=5001)

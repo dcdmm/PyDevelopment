@@ -56,7 +56,10 @@ async def hello_python(request: Request):
     if request.method == 'POST':
         return "POST"
 
-
+"""
+host TEXT      Bind socket to this host.  [default: 127.0.0.1]
+port INTEGER       Bind socket to this port. If 0, an available port will be picked.  [default: 8000]
+"""
 if __name__ == '__main__':
     # API文档(浏览器打开):http://127.0.0.1:8000/docs
     uvicorn.run(app, port=8000)
