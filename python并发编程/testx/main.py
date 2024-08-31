@@ -1,6 +1,7 @@
 import time
+import asyncio
 
-from utily import process_computer, thread_computer
+from utily import process_computer, thread_computer, async_computer
 
 
 def get_time_cpu():
@@ -15,6 +16,11 @@ def get_time_io():
     return time.time() - t0
 
 
+def get_time_async():
+    return asyncio.run(async_computer())
+
+
 if __name__ == '__main__':
     print(get_time_io())
     print(get_time_cpu())
+    print(get_time_async())
