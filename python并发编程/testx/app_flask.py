@@ -1,6 +1,6 @@
 from flask import Flask
 
-from main import get_time_cpu, get_time_io
+from main import get_time_cpu, get_time_io, get_time_async
 
 app = Flask(__name__)
 
@@ -17,3 +17,9 @@ def hello_duan():
 def hello_chao():
     a = get_time_io()
     return str(a)
+
+
+@app.route("/dmm", methods=['GET', 'POST'])
+def hello_dmm():
+    use_time = get_time_async()
+    return str(use_time)
