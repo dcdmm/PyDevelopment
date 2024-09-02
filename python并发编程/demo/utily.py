@@ -39,6 +39,7 @@ def thread_computer():
 
 
 async def func_coro(delay, what):
+    """协程函数"""
     await asyncio.sleep(delay)
     return what
 
