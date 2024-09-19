@@ -1,4 +1,4 @@
-### 核心包安装
+### 核心包安装指南
 
 * setuptools: pip install --upgrade setuptools
 * build: pip install --upgrade build 
