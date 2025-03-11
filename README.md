@@ -4,6 +4,8 @@
 
 * web开发fastapi框架
 
+### pyinstaller打包
+
 ### flask_frame_note
 
 * web开发Flask框架
