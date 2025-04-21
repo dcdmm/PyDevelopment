@@ -4,7 +4,7 @@ bind = "0.0.0.0:5000"
 
 # The number of worker processes for handling requests.
 # Default: 1
-workers = 4
+workers = 4  
 # -w
 
 # The number of worker threads for handling requests.
@@ -12,6 +12,11 @@ workers = 4
 # Default: 1
 threads = 2
 # --threads
+
+# 4(workers)个进程并发处理HTTP请求
+# 每个进程同时并发处理2(threads)个HTTP请求
+# workers = 4 
+# threads = 2
 
 # SSL key file
 # Default: None
@@ -57,7 +62,3 @@ accesslog = "-"
 # For example on the command line: gunicorn -b 127.0.0.1:8000 --env FOO=1 test:app
 # Or in the configuration file: raw_env = ["FOO=1"]
 raw_env = []
-
-debug = True
-
-
