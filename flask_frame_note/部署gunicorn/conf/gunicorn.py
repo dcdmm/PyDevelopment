@@ -4,19 +4,17 @@ bind = "0.0.0.0:5000"
 
 # The number of worker processes for handling requests.
 # Default: 1
-workers = 4  
+workers = 4 
 # -w
 
 # The number of worker threads for handling requests.
 # Run each worker with the specified number of threads.
 # Default: 1
-threads = 2
+threads = 2 
 # --threads
 
-# 4(workers)个进程并发处理HTTP请求
-# 每个进程同时并发处理2(threads)个HTTP请求
-# workers = 4 
-# threads = 2
+# workers = 4: 4个(worker)进程并发处理HTTP请求
+# threads = 2: 每个(worker)进程同时并发处理2(每个worker进程内的线程数)个HTTP请求
 
 # SSL key file
 # Default: None
