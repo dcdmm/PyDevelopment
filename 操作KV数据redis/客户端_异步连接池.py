@@ -1,13 +1,15 @@
 import redis.asyncio as redis
 import asyncio
 
-r = redis.Redis(
+pool = redis.ConnectionPool(
     host='localhost',
     port=6379,
     password="qwer123456",
     db=0,
-    decode_responses=True
+    decode_responses=True,
+    max_connections=50
 )
+r = redis.Redis(connection_pool=pool)
 
 
 async def main(client):
