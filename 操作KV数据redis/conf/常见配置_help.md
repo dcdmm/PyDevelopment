@@ -5,6 +5,9 @@ bind 0.0.0.0
 # 端口号(默认:6379)
 port 6379
 
+# 保护模式
+# 启动且没有设置密码时,服务器仅接受本地IPV4(127.0.0.1)或IPV6(::1)连接
+protected-mode yes
 
 # 数据库密码
 requirepass qwer123456
