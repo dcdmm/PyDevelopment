@@ -7,16 +7,16 @@ app = Flask(__name__)
 @app.route('/upload', methods=['POST'])
 def upload_file():
     print(request.files)
-    print(request.files.getlist('file'))
-    for file in request.files.getlist('file'):
+    print(request.files.getlist('my_file'))  # 对应: ('my_file', open('data/test0.txt', 'rb')) or my_file=@data/test0.txt
+    for file in request.files.getlist('my_file'):
         print(file.filename)
 
         file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "./data")
         file_path = os.path.join(file_path, "_" + file.filename)
         print(file_path)
-        file.save(file_path)
+        file.save(file_path)  # 写
 
-        content = file.read().decode('utf-8')
+        content = file.read().decode('utf-8')  # 读
         print(content)
     return "<p>ok!</p>"
 
