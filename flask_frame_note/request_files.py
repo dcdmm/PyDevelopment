@@ -14,9 +14,9 @@ def upload_file():
         file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "./data")
         file_path = os.path.join(file_path, "_" + file.filename)
         print(file_path)
-        file.save(file_path)  # 写
+        file.save(file_path)  # 写入
 
-        content = file.read().decode('utf-8')  # 读
+        content = file.read().decode('utf-8')  # 读取
         print(content)
     return "<p>ok!</p>"
 
