@@ -14,3 +14,4 @@
 * qdrant: pip install qdrant-client
 * streamit: pip install streamlit
 * pip install redis
+* pip install redisvl
