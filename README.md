@@ -45,6 +45,8 @@
 | assertIsInstance(a, b)    | isinstance(a, b)     |
 | assertNotIsInstance(a, b) | not isinstance(a, b) |
 
+### 操作SQLite数据库
+
 ### 操作mysql数据库
 
 ### 操作KV数据redis
