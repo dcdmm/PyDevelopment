@@ -3,7 +3,7 @@
 
 services:
   qdrant:
-    image: qdrant/qdrant:v1.11.3
+    image: qdrant/qdrant:v1.15.4-gpu-amd
     # restart: always
     container_name: qdrant
     ports:
