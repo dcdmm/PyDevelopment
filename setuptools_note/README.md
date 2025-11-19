@@ -4,7 +4,7 @@
 
 2. 构建
    * ```shell
-     cd setup.py 文件所在目录
+     cd pyproject.tool 文件所在目录
      
      # 其他可选参数
      # -w:仅生成轮子(wheel)

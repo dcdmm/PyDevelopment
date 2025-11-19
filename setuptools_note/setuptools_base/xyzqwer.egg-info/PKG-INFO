@@ -1,15 +1,32 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: xyzqwer
 Version: 0.0.1
-Summary: setuptools test
-Home-page: https://github.com/dcdmm/setuptools
-Author: dcdmm
-Author-email: dcdmm@gmail.com
-License: Apache 2.0 License
+Summary: pyproject.toml打包基础
+Author-email: dcdmm <dcdmm@gmail.com>
+License-Expression: Apache-2.0
+Project-URL: homepage, https://github.com/dcdmm/PyDevelopment
+Project-URL: source, https://github.com/dcdmm/PyDevelopment
 Keywords: python,setuptools
-Requires-Python: >=3.6.0
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: <3.14,>=3.10
+Description-Content-Type: text/markdown
 Requires-Dist: tqdm
 Requires-Dist: numpy>=1.9.0
 Requires-Dist: scipy>=1.0.0
 Requires-Dist: scikit-learn>=0.18.0
 Requires-Dist: colorama>=0.4.6
+
+# xyzqwer
+
+setuptools test project
+
+## Installation
+
+```bash
+pip install xyzqwer
+```
+
+## Description
+
+This is a test project for demonstrating setuptools configuration.
