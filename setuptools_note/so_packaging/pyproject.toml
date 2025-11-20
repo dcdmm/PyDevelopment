@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xyzasdf"
+version = "0.0.1"
+requires-python = ">=3.7"
+[tool.setuptools]
+packages = ["custom_search"]
+
+[tool.setuptools.package-data]
+# 包名应与pybind11定义的python模块名相同,c++源码见:./custom_search.cpp
+custom_search = ["custom_search.cpython-311-x86_64-linux-gnu.so"]
