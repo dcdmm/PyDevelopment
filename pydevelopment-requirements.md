@@ -4,6 +4,7 @@
 * build: pip install --upgrade build 
 * Flask: pip install Flask
 * fastapi: pip install fastapi
+* uvicorn: pip install uvicorn
 * gunicorn: pip install gunicorn
 * PyMySQL: pip install PyMySQL
 * neo4j: python -m pip install neo4j
