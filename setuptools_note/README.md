@@ -14,5 +14,5 @@
      ```
 
 3. 安装
-   * cd dist 目录
+   * cd dist目录
    * pip install .*whl
