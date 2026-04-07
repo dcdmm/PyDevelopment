@@ -11,7 +11,7 @@ class MysqlDB:
         self.database = database
         # Username to log in as. (default: 'root')
         self.user = user
-        #  MySQL port to use, default is usually OK. (default: 3306)
+        # MySQL port to use, default is usually OK. (default: 3306)
         self.port = port
         # Charset to use. (default: 'utf8')
         self.charset = charset
@@ -63,6 +63,31 @@ class MysqlDB:
         row_count = cur.execute(sql, args=args)
         # print(row_count, " of affected rows!")
         # Commit changes to stable storage
+        self.connector.commit()
+        cur.close()
+
+    def change_many_data(self, sql, args, batch_size=None):
+        """
+        批量修改数据---批量增、删、改
+
+        Parameters
+        ---------
+        sql : str
+            MySQL语句(使用%s作为占位符)
+
+        args : list[tuple]
+            参数列表,每个元素为一条记录对应的参数元组
+
+        batch_size : int, optional
+            每批次处理的记录数,默认None表示一次性处理全部
+        """
+        cur = self.connector.cursor()
+        self.connector.ping(reconnect=True)
+        if batch_size is None:
+            cur.executemany(sql, args)
+        else:
+            for i in range(0, len(args), batch_size):
+                cur.executemany(sql, args[i:i + batch_size])
         self.connector.commit()
         cur.close()
 
