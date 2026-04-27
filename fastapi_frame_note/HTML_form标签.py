@@ -9,7 +9,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/index0")
 async def index0(request: Request):
-    """参考PyDevelopment\flask_frame_note\HTML_form标签.py"""
+    """参考PyDevelopment\\flask_frame_note\HTML_form标签.py"""
     query = dict(request.query_params.items())
     print(query.get('name_'))
     print(query.get('password_'))
@@ -19,7 +19,7 @@ async def index0(request: Request):
 @app.get("/index1")
 @app.post("/index1")
 async def index1(request: Request):
-    """参考PyDevelopment\flask_frame_note\HTML_form标签.py"""
+    """参考PyDevelopment\\flask_frame_note\HTML_form标签.py"""
     if request.method == 'POST':
         form_data = await request.form()
         name = form_data.get('name_')  # 从form表单获取name_属性
