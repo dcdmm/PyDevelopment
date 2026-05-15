@@ -12,7 +12,7 @@ async def say_after(delay, what):
 async def main():
     print(f"started at {time.strftime('%X')}")
 
-    # Run awaitable objects in the aws sequence concurrently.
+    # Run awaitable objects in the aws(awaitables) sequence concurrently.
     # If any awaitable in aws is a coroutine, it is automatically scheduled as a Task.
     # If all awaitables are completed successfully, the result is an aggregate list of returned values. The order of result values corresponds to the order of awaitables in aws.
     l = await asyncio.gather(say_after(1, 'hello'),
