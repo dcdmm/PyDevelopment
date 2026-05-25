@@ -49,9 +49,11 @@
 
 ### 操作mysql数据库
 
+### 操作PostgreSQL数据库
+
 ### 操作KV数据redis
 
-### 操作分布式搜素哦和分析引擎Elasticsearch
+### 操作分布式搜索和分析引擎Elasticsearch
 
 ### 操作向量数据库qdrant
 
