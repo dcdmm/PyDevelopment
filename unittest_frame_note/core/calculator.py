@@ -16,3 +16,6 @@ class Calculator:
         if self.right == 0:
             raise ZeroDivisionError("right operand cannot be zero")
         return self.left / self.right
+
+    def multi(self) -> int:
+        return self.left * self.right

@@ -7,6 +7,11 @@ def test_add(calc: Calculator) -> None:
     assert calc.add() == 13
 
 
+def test_result(add_result: int) -> None:
+    assert add_result == 13
+
+
+# The builtin pytest.mark.parametrize decorator enables parametrization of arguments for a test function.
 @pytest.mark.parametrize(
     ("left", "right", "expected"),
     [
@@ -17,6 +22,7 @@ def test_add(calc: Calculator) -> None:
 )
 def test_subtract(left: int, right: int, expected: int) -> None:
     assert Calculator(left, right).subtract() == expected
+
 
 
 def test_divide() -> None:
