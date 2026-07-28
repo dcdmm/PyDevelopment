@@ -24,13 +24,13 @@ def test_subtract(left: int, right: int, expected: int) -> None:
     assert Calculator(left, right).subtract() == expected
 
 
-
 def test_divide() -> None:
-    # 浮点数比较
+    # 浮点数比较(误差在rel以内)
     assert Calculator(1, 3).divide() == pytest.approx(0.333_333, rel=1e-5)
 
 
 def test_divide_by_zero() -> None:
+    # 引发异常的断言
     with pytest.raises(ZeroDivisionError, match="right operand cannot be zero"):
         Calculator(10, 0).divide()
 
