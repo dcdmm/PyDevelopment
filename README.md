@@ -36,6 +36,8 @@ python -m pytest
 python -m pytest tests/test_calculator.py::test_divide
 ```
 
+### 操作KV数据库redis
+
 ### 操作SQLite数据库
 
 ### 操作mysql数据库
