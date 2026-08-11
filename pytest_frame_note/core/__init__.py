@@ -1,3 +1,4 @@
 from .calculator import Calculator
+from .calculation_service import CalculationService
 
-__all__ = ["Calculator"]
+__all__ = ["CalculationService", "Calculator"]
