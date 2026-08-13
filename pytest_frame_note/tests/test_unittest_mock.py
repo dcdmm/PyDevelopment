@@ -2,14 +2,14 @@ from unittest.mock import Mock
 import pytest
 
 from core import CalculationService
-
+from core import monkeypatch_demo
 
 
 def test_01() -> None:
-    recorder = Mock()  # 模拟真实的Recorder对象
+    recorder = Mock()  # 模拟真实对象
 
     # 规定调用recorder.record(...)时返回True
-    recorder.record.return_value = True 
+    recorder.record.return_value = True
 
     # 与上等价
     # recorder = Mock()
@@ -23,7 +23,7 @@ def test_01() -> None:
 
     assert result == 13
 
-    # (断言)确认recorder.record(...)只被调用一次且参数为"add", 13
+    # (断言)检查recorder.record(...)只被调用一次且参数为"add", 13
     recorder.record.assert_called_once_with("add", 13)
 
 
@@ -39,3 +39,26 @@ def test_02() -> None:
         service.add_and_record(10, 3)
 
     recorder.record.assert_called_once_with("add", 13)  # 同样进行了一次调用
+
+
+def test_03(monkeypatch: pytest.MonkeyPatch) -> None: 
+    # 调用fake_get_data()时返回"fake data"
+    fake_get_data = Mock(return_value="fake data")
+
+    # 暂时把monkeypatch_demo.get_data替换为fake_get_data
+    monkeypatch.setattr(monkeypatch_demo, "get_data", fake_get_data)
+
+    result = monkeypatch_demo.process_data()
+
+    assert result == "processed: fake data"
+
+    fake_get_data.assert_called_once_with()
+
+    # test_03结束后,自动恢复原来的monkeypatch_demo.get_data
+
+
+def test_04_monkeypatch_has_restored_real_function() -> None:
+    # 此时process_data()内部调用的是原来的真实 get_data()
+    result = monkeypatch_demo.process_data()
+
+    assert result == "processed: real data"
