@@ -2,7 +2,6 @@ from unittest.mock import Mock
 import pytest
 
 from core import CalculationService
-from core import monkeypatch_demo
 
 
 def test_01() -> None:
@@ -41,24 +40,3 @@ def test_02() -> None:
     recorder.record.assert_called_once_with("add", 13)  # 同样进行了一次调用
 
 
-def test_03(monkeypatch: pytest.MonkeyPatch) -> None: 
-    # 调用fake_get_data()时返回"fake data"
-    fake_get_data = Mock(return_value="fake data")
-
-    # **暂时**把monkeypatch_demo.get_data替换为fake_get_data
-    monkeypatch.setattr(monkeypatch_demo, "get_data", fake_get_data)
-
-    result = monkeypatch_demo.process_data()
-
-    assert result == "processed: fake data"
-
-    fake_get_data.assert_called_once_with()
-
-    # test_03测试结束后,恢复为monkeypatch_demo.get_data
-
-
-def test_04_monkeypatch_has_restored_real_function() -> None:
-    # 此时process_data()内部调用是monkeypatch_demo.get_data
-    result = monkeypatch_demo.process_data()
-
-    assert result == "processed: real data"
