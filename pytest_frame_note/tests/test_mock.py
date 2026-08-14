@@ -54,7 +54,7 @@ def test_03(monkeypatch: pytest.MonkeyPatch) -> None:
 
     fake_get_data.assert_called_once_with()
 
-    # test_03测试结束后,monkeypatch_demo.get_data被恢复
+    # test_03测试结束后,恢复为monkeypatch_demo.get_data
 
 
 def test_04_monkeypatch_has_restored_real_function() -> None:
