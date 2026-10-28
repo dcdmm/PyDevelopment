@@ -1,0 +1,25 @@
+2026-10-28  19:18:34 Wed werkzeug INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2026-10-28  19:18:34 Wed werkzeug INFO [33mPress CTRL+C to quit[0m
+2026-10-28  19:18:48 Wed werkzeug INFO 127.0.0.1 - - [28/Oct/2026 19:18:48] "[33mGET / HTTP/1.1[0m" 404 -
+2026-10-28  19:18:48 Wed werkzeug INFO 127.0.0.1 - - [28/Oct/2026 19:18:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-10-28  19:18:52 Wed werkzeug INFO 127.0.0.1 - - [28/Oct/2026 19:18:52] "GET /duan HTTP/1.1" 200 -
+2026-10-28  19:18:55 Wed basic ERROR Exception on /chao [GET]
+Traceback (most recent call last):
+  File "C:\Users\duanm\miniconda3\envs\dev\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\duanm\miniconda3\envs\dev\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\duanm\miniconda3\envs\dev\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\duanm\miniconda3\envs\dev\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\duanm\Music\GitHubProjects\PyDevelopment\flask_frame_note\basic.py", line 30, in hello_python
+    a = 1 / 0
+        ~~^~~
+ZeroDivisionError: division by zero
+2026-10-28  19:18:55 Wed werkzeug INFO 127.0.0.1 - - [28/Oct/2026 19:18:55] "[35m[1mGET /chao HTTP/1.1[0m" 500 -
